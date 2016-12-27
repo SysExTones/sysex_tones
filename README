@@ -1,0 +1,46 @@
+
+The sysex_tones project goal is control of amp modelers via text settings files and MIDI SysEx.
+
+	Copyright (c) 2016
+
+	This project is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This project is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
+
+Currently, the only amp modeler sysex_tones tries to understand is the Yamaha THR10.
+
+Currently, the only tested platform is GNU/Linux and the THR10.  Recent versions of the Linux kernel should recognize the THR10 as a USB device (wet/dry audio in, audio out, and MIDI) automatically.  If you have a THR5, THR10X, THR10C, or THR5A, maybe the monitor example app will recognize the heartbeat (anything else is probably broken).  If you use some other operating system, maybe you'll be lucky and this project will work as is.
+
+Currently, the only control available is via command line example apps, written in Python.
+
+If you are not comfortable with Python code, or not comfortable with command lines, you should wait until this project matures.  End user support is not available.
+
+If you install the sysex_tones directory somewhere and export PYTHONPATH=somewhere you should be able to run the examples in the sysex_tones_examples/THR10/apps directory.
+
+Start with the monitor_thr.py example.  It will need the name of the system file for reading MIDI from the THR10.  Try something from /dev/midi* or /dev/snd/midi*.  Once it is running, turn amp knobs to see text interpretations of the MIDI SysEx the THR10 sends.  Try pressing the five preset buttons.  Try entering and exiting tuning mode.
+
+If you are successful monitoring the THR, try viewing the current settings with the view_current_thr_settings.py example.  It will need the name of system files for reading and writing MIDI to/from the THR10.  Try something from /dev/midi* and /dev/snd/midi*.
+
+If you are successful viewing the current settings, try changing the name of the current settings using the change_name_of_current_settings_on_thr.py example.
+
+If you are successful changing the name of the current settings, try changing settings using text config files and the write_config_files_to_thr.py example.  You can find example config files in the sysex_tones_examples/THR10/tones/ directory.  You can send multiple config files at once, or config files that only change a few settings.  If you have favorite amp/cab pairs, put them in separate config files for easy switching.
+
+If you are successful writing config files to the THR10, try the save_any_dumped_thr_settings.py example.  It will dump the current settings, and then any settings dumps triggered when you press one of the five preset buttons.  It will keep running until you turn off the THR10.  It will save the dump files using the file name you provide, adding N_ to the beginning of the file names.
+
+If you are successful saving dump files, try viewing them using the dump_thr_files.py example.
+
+Some of the applications will work when you replace MIDI device file names with regular file names, which can be useful when debugging.  An example of this is
+
+	write_config_files_to_thr.py test.dmp some.config.test.file.txt some.other.config.text.file.txt
+	write_config_files_to_thr.py test.again.dmp yet.another.config.test.file.txt
+	dump_thr_files.py test.dmp test.again.dmp
+
+If you want to know what the THR10 text config options are, review the sysex_tones_examples/THR10/tones/all_minimums.txt example.
+
+If you want to develop apps using sysex_tones as a library, comply with the license.  And don't be suprised if the API changes, this is a rough first pass, without access to THR10 MIDI SysEx documentation, so changes are likely.

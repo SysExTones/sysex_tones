@@ -1,0 +1,14 @@
+Name: PRESET4
+Amp: BritHi
+Control: Gain 45, Master 100, Bass 87, Middle 73, Treble 30
+Cab: Brit4x12
+Compressor: Off
+# Compressor: Stomp, Sustain 50, Output 50
+Modulation: Off
+# Modulation: Chorus, Speed 0, Depth 0, Mix 0
+Delay: Off
+# Delay: Time 5000, Feedback 0, High Cut 0, Low Cut 0, Level 0
+Reverb: Off
+# Reverb: Plate, Time 11, Pre 1, Low Cut 97, High Cut 2991, High Ratio 4, Low Ratio 9, Level 73
+Gate: On
+Gate: Threshold 50, Release 50

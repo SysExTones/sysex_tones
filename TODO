@@ -1,0 +1,10 @@
+
+Find a reliable way to get the full path and names of MIDI device files for input and output.
+
+Add support for more THR devices.
+
+Add reporting mechanisms for out of range settings values, incorrect settings names, etc.
+
+Add support for changing the name of settings, on amp, when processing settings files.
+
+Refactor THR10 code.

@@ -1,0 +1,89 @@
+Name: All Minimums
+
+# the available amp models
+Amp: Clean
+Amp: Crunch
+Amp: Lead
+Amp: BritHi
+Amp: Modern
+Amp: Bass
+Amp: Aco
+Amp: Flat
+
+# the available cabinet models
+Cab: US4x12
+Cab: US2x12
+Cab: Brit4x12
+Cab: Brit2x12
+Cab: 1x12
+Cab: 4x10
+Cab: None
+
+# the available controls
+# note: when using the THR10 Aco amp model, the gain knob is a microphone mix simulation
+Control: Gain 0, Master 0, Bass 0, Middle 0, Treble 0
+### maximum values
+### Control: Gain 100, Master 100, Bass 100, Middle 100, Treble 100
+
+# the available compressor options, stomp/rack, and their suboptions
+Compressor: On
+Compressor: Stomp, Sustain 0, Output 0
+### maximum values
+### Compressor: Stomp, Sustain 100, Output 100
+Compressor: Rack, Threshold 0, Attack 0, Release 0, Ratio 1:1, Knee Soft, Output 0
+Compressor: Rack, Threshold 0, Attack 0, Release 0, Ratio 1:4, Knee Medium, Output 0
+Compressor: Rack, Threshold 0, Attack 0, Release 0, Ratio 1:8, Knee Hard, Output 0
+Compressor: Rack, Threshold 0, Attack 0, Release 0, Ratio 1:12, Knee Soft, Output 0
+Compressor: Rack, Threshold 0, Attack 0, Release 0, Ratio 1:20, Knee Medium, Output 0
+Compressor: Rack, Threshold 0, Attack 0, Release 0, Ratio 1:inf, Knee Hard, Output 0
+### maximum values
+### Compressor: Rack, Threshold 600, Attack 100, Release 100, Output 600
+Compressor: Off
+
+# the available modulation options, chorus/flanger/tremelo/phaser, and their suboptions
+Modulation: On
+Modulation: Chorus, Speed 0, Depth 0, Mix 0
+### maximum values
+### Modulation: Chorus, Speed 100, Depth 100, Mix 100
+Modulation: Flanger, Speed 0, Manual 0, Depth 0, Feedback 0, Spread 0
+### maximum values
+### Modulation: Flanger, Speed 100, Manual 100, Depth 100, Feedback 100, Spread 100
+Modulation: Tremelo, Freq 0, Depth 0
+### maximum values
+### Modulation: Tremelo, Freq 100, Depth 100
+Modulation: Phaser, Speed 0, Manual 0, Depth 0, Feedback 0
+### maximum values
+### Modulation: Phaser, Speed 100, Manual 100, Depth 100, Feedback 100
+Modulation: Off
+
+# the delay, and its suboptions
+Delay: On
+Delay: Time 1, Feedback 0, High Cut 1000, Low Cut 21, Level 0
+### maximum values
+### Delay: Time 9999, Feedback 100, High Cut 16001, Low Cut 8000, Level 100
+Delay: Off
+
+# the available reverb options, hall/room/plate/spring, and their suboptions
+Reverb: On
+Reverb: Hall, Time 3, Pre 1, Low Cut 21, High Cut 1000, High Ratio 1, Low Ratio 1, Level 0
+Reverb: Room, Time 3, Pre 1, Low Cut 21, High Cut 1000, High Ratio 1, Low Ratio 1, Level 0
+Reverb: Plate, Time 3, Pre 1, Low Cut 21, High Cut 1000, High Ratio 1, Low Ratio 1, Level 0
+### maximum values
+### Reverb: Time 200, Pre 2000, Low Cut 8000, High Cut 16001, High Ratio 10, Low Ratio 14, Level 100
+Reverb: Spring, Reverb 0, Filter 0
+### maximum values
+### Reverb: Spring, Reverb 100, Filter 100
+Reverb: Off
+
+# the noise gate, and its suboptions
+Gate: On
+Gate: Threshold 0, Release 0
+### maximum values
+### Gate: Threshold 100, Release 100
+Gate: Off
+
+# partial suboptions on a line should work
+# for example
+# Control: Bass 50, Middle 50, Treble 50
+# Delay: Time 123
+# Reverb: Hall
