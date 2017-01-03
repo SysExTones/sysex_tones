@@ -47,11 +47,17 @@ def change_name_of_settings( name, data ):
 	""" Replace the old name with a new name in the THR MIDI data, returns an altered copy of data. """
 	retval = data[:] # make a copy of the data
 	offset = _THR_CONSTANTS.THR_DUMP_OFFSET
+	low = ord( ' ' )
+	high = ord( '~' )
 	size = len( name )
 	count = 0
 	# copy the name, truncating if too long
 	while count < size and count < _THR_CONSTANTS.THR_SETTINGS_NAME_SIZE:
-		retval[count + offset] = name[count]
+		val = name[count]
+		if val == 0:
+			break
+		if val >= low and val <= high:
+			retval[count + offset] = name[count]
 		count += 1
 	# set any remaining trailing old name data to '\0'
 	while count < _THR_CONSTANTS.THR_SETTINGS_NAME_SIZE:

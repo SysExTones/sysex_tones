@@ -13,7 +13,7 @@
 # GNU Affero General Public License for more details.
 
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 from sysex_tones.BasicIO import BasicIO
@@ -58,8 +58,12 @@ def convert_from_midi_int_ints( data ):
 
 
 def convert_from_midi_to_string( data ):
-	""" Convert data into a string, ignore any '\0'. """
-	return ''.join( [chr( x ) for x in data if x != 0] )
+	""" Convert data into a string, truncate on first '\0' (if present), ignore any ASCII values less than ord( ' ' ) and greater than ord( '~' ). """
+	low = ord( ' ' )
+	high = ord( '~' )
+	if 0 in data:
+		data = data[:data.index( 0 )]
+	return ''.join( [chr( x ) for x in data if x >= low and x <= high] )
 
 
 def convert_bytes_to_hex_string( data ):
